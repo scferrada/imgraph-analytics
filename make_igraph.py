@@ -13,14 +13,14 @@ files = []
 for p, d, f in os.walk(args.input_folder):
 	files.extend([os.path.join(p,x) for x in f if x.endswith(args.extension)])
 	break
-print("Loading TSVs")
+print("Loading %d TSVs" % len(files))
 edges = []	
 for filename in files:
 	for line in open(filename, 'r').readlines():
 		if "\t2\t" in line:
 			parts = line.split("\t")
-			edge.append((int(parts[0]), int(parts[1])))
+			edges.append((int(parts[0]), int(parts[1])))
 print("Making Graph")
 graph = ig.Graph(edges)
 print("Saving graph")
-graph.write_lgl("hog.lgl")
+graph.write_lgl(os.path.join(args.output_folder,"hog.lgl"))
