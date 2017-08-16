@@ -5,7 +5,7 @@ parser = argparse.ArgumentParser(description='Reads IMGpedia TSV files and prodi
 
 parser.add_argument('input_folder', type=str, help='the directory where the graph files are')
 parser.add_argument('output_folder', type=str, help='the directory where the results must be stored')
-parser.add_argument('--ext', dest='extension', type=str, default='graph', help='the extension of the CSV files, .graph by default')
+parser.add_argument('--ext', dest='extension', type=str, default='', help='the extension of the CSV files, none by default')
 
 args = parser.parse_args()
 
