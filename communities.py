@@ -11,7 +11,7 @@ args = parser.parse_args()
 print("Reading graph")
 graph = ig.Graph.Read_Lgl(args.input_graph, directed=True)
 print("Computing clusters")
-clusters = graph.community_leading_eigenvector()
+clusters = graph.as_undirected().community_leading_eigenvector()
 print("writting result")
 counter = 1
 for sg in clusters.subgraphs():
