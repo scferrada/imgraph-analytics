@@ -21,6 +21,6 @@ for filename in files:
 			parts = line.split("\t")
 			edges.append((int(parts[0]), int(parts[1])))
 print("Making Graph")
-graph = ig.Graph(edges)
+graph = ig.Graph(edges, directed=True)
 print("Saving graph")
 graph.write_lgl(os.path.join(args.output_folder,"hog.lgl"))
