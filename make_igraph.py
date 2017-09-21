@@ -17,10 +17,10 @@ print("Loading %d TSVs" % len(files))
 edges = []	
 for filename in files:
 	for line in open(filename, 'r').readlines():
-		if "\t2\t" in line:
+		if "\t1\t" in line:
 			parts = line.split("\t")
 			edges.append((int(parts[0]), int(parts[1])))
 print("Making Graph")
 graph = ig.Graph(edges, directed=True)
 print("Saving graph")
-graph.write_lgl(os.path.join(args.output_folder,"hog.lgl"))
+graph.write_lgl(os.path.join(args.output_folder,"ghd.lgl"))
