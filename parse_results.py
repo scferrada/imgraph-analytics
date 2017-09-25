@@ -30,4 +30,4 @@ for file in cluster_files:
 				img = graph[line[1:].strip()]
 			else:
 				img = graph[line.strip()]
-			cluster.write(wc_url % line)
+			cluster.write(wc_url % img)
